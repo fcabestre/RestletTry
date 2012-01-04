@@ -2,22 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a652b6d-e881-4c3a-a300-776842c11177" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Uno/src/main/java/org/ultimo/uno/UnoRestlet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Uno/src/main/java/org/ultimo/uno/UnoServer.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_osgi_osgi_R4_compendium_1_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_osgi_osgi_R4_core_1_0.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/fred.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Uno/Uno.iml" afterPath="$PROJECT_DIR$/Uno/Uno.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Uno/osgi.bnd" afterPath="$PROJECT_DIR$/Uno/osgi.bnd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Uno/pom.xml" afterPath="$PROJECT_DIR$/Uno/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Uno/src/main/java/org/ultimo/uno/UnoActivator.java" afterPath="$PROJECT_DIR$/Uno/src/main/java/org/ultimo/uno/UnoActivator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/poms/compiled/compiled-bundle-settings.iml" afterPath="$PROJECT_DIR$/poms/compiled/compiled-bundle-settings.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/poms/compiled/pom.xml" afterPath="$PROJECT_DIR$/poms/compiled/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/poms/pom.xml" afterPath="$PROJECT_DIR$/poms/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/poms/wrappers/pom.xml" afterPath="$PROJECT_DIR$/poms/wrappers/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/runner/deploy-pom.xml" afterPath="$PROJECT_DIR$/runner/deploy-pom.xml" />
     </list>
     <ignored path="RestletTry.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -321,7 +307,7 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
