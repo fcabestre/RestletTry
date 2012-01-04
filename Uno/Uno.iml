@@ -10,10 +10,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.osgi:osgi_R4_core:1.0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.osgi:osgi_R4_compendium:1.0" level="project" />
     <orderEntry type="library" name="Maven: org.restlet.jse:org.restlet:2.0.0" level="project" />
     <orderEntry type="library" name="Maven: org.osgi:org.osgi.core:4.0.0" level="project" />
+    <orderEntry type="library" name="Maven: biz.aQute:bndlib:1.50.0" level="project" />
   </component>
 </module>
 
