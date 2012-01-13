@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-    <!--
+  <!--
      | put company details here
     <organization>
       <name>...</name>
@@ -10,7 +9,7 @@
     </organization>
     -->
 
-    <!--
+  <!--
      | put license details here
     <licenses>
       <license>
@@ -22,61 +21,62 @@
     </licenses>
     -->
 
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>org.ultimo</groupId>
-    <artifactId>RestletTry</artifactId>
-    <version>1.0-SNAPSHOT</version>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.ultimo</groupId>
+  <artifactId>RestletTry</artifactId>
+  <version>1.0-SNAPSHOT</version>
 
-    <name>org.ultimo.RestletTry (OSGi project)</name>
+  <name>org.ultimo.RestletTry (OSGi project)</name>
 
-    <!--
+  <!--
      | describe your project here
     -->
 
-    <description>Generated using Pax-Construct</description>
+  <description>Generated using Pax-Construct</description>
 
-    <properties>
-        <!--
+  <properties>
+    <!--
          | some example OSGi runtime properties
         -->
-        <org.osgi.service.http.port>8080</org.osgi.service.http.port>
-        <org.osgi.service.http.port.secure>8443</org.osgi.service.http.port.secure>
-    </properties>
+    <org.osgi.service.http.port>8080</org.osgi.service.http.port>
+    <org.osgi.service.http.port.secure>8443</org.osgi.service.http.port.secure>
+  </properties>
 
-    <packaging>pom</packaging>
+  <packaging>pom</packaging>
 
-    <modules>
-        <module>poms</module>
-        <module>provision</module>
-        <module>Uno</module>
-    </modules>
+  <modules>
+    <module>poms</module>
+    <module>provision</module>
+    <module>Uno</module>
+    <module>Dos</module>
+  </modules>
 
-    <build>
-        <plugins>
-            <plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.3.2</version>
-                <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
-                    <fork>true</fork>
-                    <executable>${env.JAVA7_HOME}/bin/javac</executable>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.ops4j</groupId>
-                <artifactId>maven-pax-plugin</artifactId>
-                <version>1.5</version>
-                <configuration>
-                    <!--
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>2.3.2</version>
+        <configuration>
+          <source>1.7</source>
+          <target>1.7</target>
+          <fork>true</fork>
+          <executable>${env.JAVA7_HOME}/bin/javac</executable>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.ops4j</groupId>
+        <artifactId>maven-pax-plugin</artifactId>
+        <version>1.5</version>
+        <configuration>
+          <!--
                      | some example Pax-Runner settings
                     -->
-                    <provision>
-                        <param>--platform=felix</param>
-                    </provision>
-                </configuration>
-                <executions>
-                    <!--
+          <provision>
+            <param>--platform=felix</param>
+          </provision>
+        </configuration>
+        <executions>
+          <!--
                      | uncomment to auto-generate IDE files
                     <execution>
                       <id>ide-support</id>
@@ -85,9 +85,9 @@
                       </goals>
                     </execution>
                     -->
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
 
 </project>

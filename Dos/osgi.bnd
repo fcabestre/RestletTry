@@ -2,5 +2,5 @@
 # Use this file to add customized Bnd instructions for the bundle
 #-----------------------------------------------------------------
 
-Service-Component: ${bundle.namespace}.UnoServer
-Bundle-Activator: ${bundle.namespace}.UnoActivator
+Service-Component: ${bundle.namespace}.DosRestlet
+Bundle-Activator: ${bundle.namespace}.DosActivator

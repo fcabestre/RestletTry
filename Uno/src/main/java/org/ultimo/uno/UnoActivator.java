@@ -12,9 +12,7 @@ public class UnoActivator implements BundleActivator {
 
     public void start(BundleContext context) throws Exception {
         this.server = new UnoServer(Protocol.HTTP, 8554);
-        final UnoRestlet restlet = new UnoRestlet();
-        this.server.setNext(restlet);
-        server.start();
+        this.server.start();
     }
 
     public void stop(BundleContext context) throws Exception {

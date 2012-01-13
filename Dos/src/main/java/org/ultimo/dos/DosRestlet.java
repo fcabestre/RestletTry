@@ -1,15 +1,18 @@
-package org.ultimo.uno;
+package org.ultimo.dos;
 
+import aQute.bnd.annotation.component.Component;
 import org.restlet.Request;
 import org.restlet.Response;
 import org.restlet.Restlet;
+import org.restlet.Uniform;
 import org.restlet.data.MediaType;
 import org.restlet.representation.AppendableRepresentation;
 
 import java.io.IOException;
 
 /** @author Frédéric Cabestre */
-public class UnoRestlet extends Restlet {
+@Component(provide = Uniform.class)
+public class DosRestlet extends Restlet {
 
     @Override
     public void handle(Request request, Response response) {
