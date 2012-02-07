@@ -11,12 +11,11 @@ public class UnoActivator implements BundleActivator {
     private Server server;
 
     public void start(BundleContext context) throws Exception {
-        this.server = new UnoServer(Protocol.HTTP, 8554);
-        this.server.start();
+        System.out.println("Bundle <" + this.getClass().getName() + "> started");
     }
 
     public void stop(BundleContext context) throws Exception {
-        server.stop();
+        System.out.println("Bundle <" + this.getClass().getName() + "> stopped");
     }
 }
 

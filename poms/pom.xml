@@ -75,8 +75,9 @@
                 <artifactId>bndlib</artifactId>
                 <version>1.50.0</version>
                 <scope>compile</scope>
+                <optional>true</optional>
             </dependency>
-      </dependencies>
+    </dependencies>
     </dependencyManagement>
 
 </project>
