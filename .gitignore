@@ -1,5 +1,8 @@
 Uno/target
+Dos/target
 runner/bundles
+runner/cache
+runner/equinox
 runner/felix
 .idea
 *.iml

@@ -8,8 +8,6 @@ import org.restlet.data.Protocol;
 /** @author Frédéric Cabestre */
 public class UnoActivator implements BundleActivator {
 
-    private Server server;
-
     public void start(BundleContext context) throws Exception {
         System.out.println("Bundle <" + this.getClass().getName() + "> started");
     }

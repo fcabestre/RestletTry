@@ -1,6 +1,7 @@
 package org.ultimo.uno;
 
 import aQute.bnd.annotation.component.Component;
+import aQute.bnd.annotation.component.ConfigurationPolicy;
 import aQute.bnd.annotation.component.Reference;
 import org.restlet.Restlet;
 import org.restlet.Server;
@@ -8,7 +9,7 @@ import org.restlet.Uniform;
 import org.restlet.data.Protocol;
 
 /** @author Frédéric Cabestre */
-@Component()
+@Component
 public class UnoServer extends Server {
 
     public UnoServer() {
@@ -32,7 +33,7 @@ public class UnoServer extends Server {
         System.out.println("Restlet removed: " + restlet.getName());
     }
 
-    @Reference(service = TestComponent.class, dynamic = false, multiple = false, optional = false)
+    @Reference(service = TestComponent.class, dynamic = true, multiple = false, optional = true)
     public void addTestComponent(TestComponent component) {
         System.out.println("Component <" + component.toString() + "> Installed");
     }
