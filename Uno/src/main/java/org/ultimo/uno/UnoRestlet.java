@@ -12,7 +12,7 @@ import java.io.IOException;
 
 /** @author Frédéric Cabestre */
 @Component(provide = Uniform.class)
-public class UnoRestlet extends Restlet {
+public class UnoRestlet extends Restlet implements MyRestlet {
 
     @Override
     public void handle(Request request, Response response) {
@@ -29,6 +29,11 @@ public class UnoRestlet extends Restlet {
             e.printStackTrace();
         }
         response.setEntity(representation);
+    }
+
+    @Override
+    public String getPathTemplate() {
+        return "/hello/madam";
     }
 }
 

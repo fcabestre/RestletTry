@@ -3,49 +3,48 @@ package org.ultimo.uno;
 import aQute.bnd.annotation.component.Component;
 import aQute.bnd.annotation.component.ConfigurationPolicy;
 import aQute.bnd.annotation.component.Reference;
+import org.restlet.Application;
 import org.restlet.Restlet;
-import org.restlet.Server;
 import org.restlet.Uniform;
 import org.restlet.data.Protocol;
+import org.restlet.routing.Router;
 
 /** @author Frédéric Cabestre */
 @Component(configurationPolicy = ConfigurationPolicy.optional)
-public class UnoServer extends Server {
+public class UnoApplication extends Application {
 
-    public UnoServer() {
-        super(Protocol.HTTP, 8554);
+    private Router router;
+
+    public UnoApplication() {
     }
 
-    public UnoServer(Protocol protocol, int port) {
-        super(protocol, port);
+    @Override
+    public Restlet createInboundRoot() {
+        this.router = new Router(this.getContext());
+        return this.router;
     }
 
     @Reference(service = Uniform.class, dynamic = true, multiple = true, optional = true)
     public void addRestlet(Uniform uniform) {
+        assert uniform instanceof Restlet;
+        assert uniform instanceof MyRestlet;
         final Restlet restlet = (Restlet) uniform;
         System.out.println("Restlet added: " + restlet.getName());
-        this.setNext(restlet);
+        final MyRestlet myRestlet = (MyRestlet) uniform;
+        this.router.attach(myRestlet.getPathTemplate(), restlet);
     }
 
     public void removeRestlet(Uniform uniform) {
-        // ??
+        assert uniform instanceof Restlet;
         final Restlet restlet = (Restlet) uniform;
         System.out.println("Restlet removed: " + restlet.getName());
-    }
-
-    @Reference(service = TestComponent.class, dynamic = true, multiple = false, optional = true)
-    public void addTestComponent(TestComponent component) {
-        System.out.println("Component <" + component.toString() + "> Installed");
-    }
-
-    public void removeTestComponent(TestComponent component) {
-        System.out.println("Component <" + component.toString() + "> Removed");
+        this.router.detach(restlet);
     }
 
     public void activate() {
         try {
             this.start();
-            System.out.println("Component <" + this.getClass().getName() + "> activated");
+            System.out.println("Component <" + this.getName() + "> activated");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -54,7 +53,7 @@ public class UnoServer extends Server {
     public void deactivate() {
         try {
             this.stop();
-            System.out.println("Component <" + this.getClass().getName() + "> deactivated");
+            System.out.println("Component <" + this.getName() + "> deactivated");
         } catch (Exception e) {
             e.printStackTrace();
         }
