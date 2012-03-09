@@ -33,7 +33,7 @@ public class UnoRestlet extends Restlet implements MyRestlet {
 
     @Override
     public String getPathTemplate() {
-        return "/hello/madam";
+        return "/uno/madam";
     }
 }
 

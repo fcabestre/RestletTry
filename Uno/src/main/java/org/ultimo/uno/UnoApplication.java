@@ -10,7 +10,7 @@ import org.restlet.data.Protocol;
 import org.restlet.routing.Router;
 
 /** @author Frédéric Cabestre */
-@Component(configurationPolicy = ConfigurationPolicy.optional)
+@Component(provide = Uniform.class, configurationPolicy = ConfigurationPolicy.optional)
 public class UnoApplication extends Application {
 
     private Router router;
@@ -24,21 +24,22 @@ public class UnoApplication extends Application {
         return this.router;
     }
 
-    @Reference(service = Uniform.class, dynamic = true, multiple = true, optional = true)
+    @Reference(service = Uniform.class, dynamic = false, multiple = true, optional = true)
     public void addRestlet(Uniform uniform) {
-        assert uniform instanceof Restlet;
-        assert uniform instanceof MyRestlet;
-        final Restlet restlet = (Restlet) uniform;
-        System.out.println("Restlet added: " + restlet.getName());
-        final MyRestlet myRestlet = (MyRestlet) uniform;
-        this.router.attach(myRestlet.getPathTemplate(), restlet);
+        if (uniform instanceof MyRestlet) {
+            final Restlet restlet = (Restlet) uniform;
+            System.out.println("Restlet added: " + restlet.getName());
+            final MyRestlet myRestlet = (MyRestlet) uniform;
+            this.router.attach(myRestlet.getPathTemplate(), restlet);
+        }
     }
 
     public void removeRestlet(Uniform uniform) {
-        assert uniform instanceof Restlet;
-        final Restlet restlet = (Restlet) uniform;
-        System.out.println("Restlet removed: " + restlet.getName());
-        this.router.detach(restlet);
+        if (uniform instanceof MyRestlet) {
+            final Restlet restlet = (Restlet) uniform;
+            System.out.println("Restlet removed: " + restlet.getName());
+            this.router.detach(restlet);
+        }
     }
 
     public void activate() {

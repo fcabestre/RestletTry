@@ -13,19 +13,21 @@ public class UnoComponent extends Component {
         this.getServers().add(Protocol.HTTP, 8558);
     }
 
-    @Reference(service = Uniform.class, dynamic = true, multiple = true, optional = true)
+    @Reference(service = Uniform.class, dynamic = true, multiple = true, optional = false)
     public void addApplication(Uniform uniform) {
-        assert uniform instanceof Application;
-        final Application application = (Application) uniform;
-        System.out.println("Application added: " + application.getName());
-        application.setContext(this.getContext());
-        this.getDefaultHost().attach(application);
+        if (uniform instanceof Application) {
+            final Application application = (Application) uniform;
+            System.out.println("Application added: " + application.getName());
+            application.setContext(this.getContext().createChildContext());
+            this.getDefaultHost().attach(application);
+        }
     }
 
     public void removeApplication(Uniform uniform) {
-        assert uniform instanceof Application;
-        final Application application = (Application) uniform;
-        System.out.println("Application removed: " + application.getName());
+        if (uniform instanceof Application) {
+            final Application application = (Application) uniform;
+            System.out.println("Application removed: " + application.getName());
+        }
     }
 
     public void activate() {
