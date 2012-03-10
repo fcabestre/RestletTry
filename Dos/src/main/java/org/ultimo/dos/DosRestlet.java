@@ -23,7 +23,7 @@ public class DosRestlet extends Restlet implements MyRestlet {
             representation.append("<head>");
             representation.append("</head>");
             representation.append("<body>");
-            representation.append("<a href=\"http://www.bonjourmadame.fr\">Hello Madam</a>");
+            representation.append("<a href=\"/uno\">Uno Restlet</a>");
             representation.append("</body>");
             representation.append("</html>");
         } catch (IOException e) {
@@ -34,7 +34,7 @@ public class DosRestlet extends Restlet implements MyRestlet {
 
     @Override
     public String getPathTemplate() {
-        return "/dos/madam";
+        return "/dos";
     }
 }
 
