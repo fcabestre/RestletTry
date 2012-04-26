@@ -1,9 +1,11 @@
 Uno/target
 Dos/target
+ExtJS/target
 runner/bundles
 runner/cache
 runner/equinox
 runner/felix
 .idea
 *.iml
+ExtJS/src/main/resources/extjs
 
