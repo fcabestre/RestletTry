@@ -24,22 +24,21 @@ public class UnoApplication extends Application {
         return this.router;
     }
 
-    @Reference(service = Uniform.class, dynamic = true, multiple = true, optional = true)
-    public void addRestlet(Uniform uniform) {
-        if (uniform instanceof MyRestlet) {
-            final Restlet restlet = (Restlet) uniform;
-            System.out.println("Restlet added: " + restlet.getName());
-            final MyRestlet myRestlet = (MyRestlet) uniform;
-            this.router.attach(myRestlet.getPathTemplate(), restlet);
+    @Reference(service = IRestletProvider.class, dynamic = true, multiple = true, optional = true)
+    public void addRestlet(IRestletProvider provider) {
+        if (provider instanceof IDirectoryProvider) {
+            ((IDirectoryProvider) provider).initDirectory(this.getContext());
         }
+        final String pathTemplate = provider.getPathTemplate();
+        final Restlet resource = provider.getResource();
+        System.out.println("Restlet added: " + resource);
+        this.router.attach(pathTemplate, resource);
     }
 
-    public void removeRestlet(Uniform uniform) {
-        if (uniform instanceof MyRestlet) {
-            final Restlet restlet = (Restlet) uniform;
-            System.out.println("Restlet removed: " + restlet.getName());
-            this.router.detach(restlet);
-        }
+    public void removeRestlet(IRestletProvider provider) {
+        final Restlet restlet = provider.getResource();
+        System.out.println("Restlet removed: " + restlet.getName());
+        this.router.detach(restlet);
     }
 }
 

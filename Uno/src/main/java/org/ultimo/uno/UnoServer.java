@@ -33,15 +33,6 @@ public class UnoServer extends Server {
         System.out.println("Restlet removed: " + restlet.getName());
     }
 
-    @Reference(service = TestComponent.class, dynamic = true, multiple = false, optional = true)
-    public void addTestComponent(TestComponent component) {
-        System.out.println("Component <" + component.toString() + "> Installed");
-    }
-
-    public void removeTestComponent(TestComponent component) {
-        System.out.println("Component <" + component.toString() + "> Removed");
-    }
-
     public void activate() {
         try {
             this.start();
