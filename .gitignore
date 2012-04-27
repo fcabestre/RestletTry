@@ -4,6 +4,7 @@ runner/bundles
 runner/cache
 runner/equinox
 runner/felix
+runner/deploy-pom.xml
 .idea
 *.iml
 
