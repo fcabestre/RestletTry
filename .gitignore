@@ -1,5 +1,6 @@
 Uno/target
 Dos/target
+ExtJS/target
 runner/bundles
 runner/cache
 runner/equinox
@@ -7,4 +8,5 @@ runner/felix
 runner/deploy-pom.xml
 .idea
 *.iml
+ExtJS/src/main/resources/extjs
 

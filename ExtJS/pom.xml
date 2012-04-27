@@ -10,13 +10,13 @@
     </parent>
 
     <properties>
-        <bundle.symbolicName>org.ultimo.RestletTry.Dos</bundle.symbolicName>
-        <bundle.namespace>org.ultimo.dos</bundle.namespace>
+        <bundle.symbolicName>org.ultimo.RestletTry.ExtJS</bundle.symbolicName>
+        <bundle.namespace>org.ultimo.extjs</bundle.namespace>
     </properties>
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.ultimo.RestletTry</groupId>
-    <artifactId>Dos</artifactId>
+    <artifactId>ExtJS</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <name>${bundle.symbolicName} [${bundle.namespace}]</name>
