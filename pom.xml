@@ -51,6 +51,7 @@
     <module>Uno</module>
     <module>Dos</module>
     <module>ExtJS</module>
+    <module>DojoRestlet</module>
   </modules>
 
   <build>
@@ -75,8 +76,10 @@
                     -->
           <profiles>ds</profiles>
           <provision>
+            <param>--log=DEBUG</param>
             <param>--platform=felix</param>
             <param>--version=4.0.2</param>
+            <param>--vmOptions=-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005</param>
             <!--
                         <param>-platform=equinox</param>
                         <param>-version=3.7.0</param>

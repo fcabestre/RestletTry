@@ -11,7 +11,7 @@ import org.restlet.representation.AppendableRepresentation;
 import java.io.IOException;
 
 /** @author Frédéric Cabestre */
-@Component(provide = Uniform.class)
+@Component(provide = IRestletProvider.class)
 public class UnoRestlet implements IResourceProvider {
 
     private final Restlet restlet;

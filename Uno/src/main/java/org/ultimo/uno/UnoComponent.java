@@ -10,7 +10,10 @@ import org.restlet.data.Protocol;
 public class UnoComponent extends Component {
 
     public UnoComponent() {
+        System.out.println("Adding protocols");
         this.getServers().add(Protocol.HTTP, 8558);
+//        this.getClients().add(Protocol.FILE);
+        this.getClients().add(Protocol.CLAP);
     }
 
     @Reference(service = Uniform.class, dynamic = true, multiple = true, optional = false)
